@@ -1,0 +1,4 @@
+name: Econ
+version: '${project.version}'
+main: com.javacle.econ.Econ
+api-version: 1.19
