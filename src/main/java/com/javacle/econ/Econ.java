@@ -16,10 +16,9 @@ public final class Econ extends JavaPlugin {
     File file;
     @Override
     public void onEnable() {
-        file = new File(getDataFolder(), "chips.yml");
+
         fileManager = new FileManager(this);
         econManager = new EconManager(this);
-        fileManager.setup();
         Bukkit.getPluginManager().registerEvents(new EconListener(this), this);
 
 

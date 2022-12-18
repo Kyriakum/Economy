@@ -8,24 +8,23 @@ import java.io.IOException;
 public class FileManager {
 
     private Econ econ;
+    private File file;
 
     public FileManager(Econ econ) {
         this.econ = econ;
-    }
-
-
-    public void setup(){
-        File a = econ.getDataFolder();
-        a.mkdir();
-        File f = econ.getFile();
-        if(!f.exists()){
+        file = new File(econ.getDataFolder(), "chips.yml");
+        econ.getDataFolder().mkdir();
+        if(!file.exists()){
             try {
-                f.createNewFile();
+                file.createNewFile();
             } catch (IOException e) {
-                e.printStackTrace();
+
             }
+
         }
     }
+
+    public File getFile() { return file;}
 
 
 }
